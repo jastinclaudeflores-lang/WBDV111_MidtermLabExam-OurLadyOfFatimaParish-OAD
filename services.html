@@ -13,11 +13,11 @@
 </head>
 <body>
 
-   <header class="site-header">
+<header class="site-header">
     <div class="logo-section">
       <img src="./images/OLFP with bg.png" alt="Our Lady of Fatima Parish-OAD Logo">
       <img src="./images/DOF no BG.png" alt="Diocese of Antipolo Logo">
-      <h1>OUR LADY OF FATIMA PARISH-OAD</h1>
+      <!--<h1>OUR LADY OF FATIMA PARISH-OAD</h1>-->
     </div>
     <nav class="nav-links">
       <ul>
@@ -35,8 +35,8 @@
         <li><a href="./donation.html">DONATION</a></li>
       </ul>
     </nav>
-  </header>
- 
+  <button id="dark-mode-toggle">🌙</button>
+</header>
   
   <div class="image-banner">
     <img src="./images/2.png" alt="Picture of the Church Altar">
@@ -165,24 +165,73 @@
         </nav>
       </div>
     </div>
-    
+
+    <button id="backToTop">↑ Top</button>
+
   </footer>
 
   <script>
-    const contactBtn = document.getElementById('contact-btn');
-    const contactNav = document.getElementById('contact-nav');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-    contactBtn.addEventListener('click', () => {
-      contactNav.classList.toggle('hidden');
-    });
+// Load saved mode
+if (localStorage.getItem('darkMode') === 'enabled') {
+  document.body.classList.add('dark-mode');
+}
 
-    const parishToggle = document.getElementById('parish-toggle');
+// Toggle dark mode
+
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // Save preference
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('darkMode', 'enabled');
+    darkModeToggle.textContent = '☀️';
+  } else {
+    localStorage.setItem('darkMode', 'disabled');
+    darkModeToggle.textContent = '🌙';
+  }
+});
+
+// Update button text on page load
+if (document.body.classList.contains('dark-mode')) {
+  darkModeToggle.textContent = '☀️';
+}
+
+        const parishToggle = document.getElementById('parish-toggle');
     const parishNav = document.getElementById('parish-nav');
 
-    parishToggle.addEventListener('click', () => {
-    parishNav.classList.toggle('hidden');
+    parishToggle.addEventListener("click", function(event) {
+      parishNav.classList.toggle("hidden");
+      event.stopPropagation();
+
+    document.addEventListener("click", function(event) {
+    if (!parishNav.classList.contains("hidden")) {
+      if (!parishNav.contains(event.target) && event.target !== parishToggle) {
+        parishNav.classList.add("hidden");
+      }
+    }
+  });
+});
+
+
+// Back to Top button
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
     });
+
+    backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    
   </script>
+
 
 </body>
 </html>
