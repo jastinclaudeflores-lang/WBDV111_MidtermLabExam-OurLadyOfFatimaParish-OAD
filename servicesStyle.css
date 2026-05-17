@@ -10,17 +10,21 @@ body {
   font-family: "Baskerville", serif;
 }
 
-
-/*header header header*/
+ /*Header Header Header*/
 
 .site-header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   justify-content: space-between;
   align-items: center;
   background-color: #3F51B5;
   color: black;
   padding: 10px 20px;
-  
+
 }
 
 .logo-section {
@@ -29,17 +33,17 @@ body {
 }
 
 .logo-section img {
-  height: 90px;
-  width: 90px;
+  height: 60px;
+  width: 60px;
   margin-right: 10px;
   border-radius: 50%; 
-  
+
 }
 
 .logo-section h1 {
   margin: 0;
   font-family: "Libre Baskerville", serif;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
 }
 hr {
@@ -72,10 +76,10 @@ hr {
 
 #parish-toggle {
   color: #000000;
-  text-decoration: underline;  
+  text-decoration: underline;
   cursor: pointer;
   font-weight: bold;
-  display: inline-block;           
+  display: inline-block;
   text-align: center;
 }
 
@@ -115,26 +119,26 @@ hr {
   text-decoration: none;
 }
 
-
-/*header header header*/
+ /*Header Header Header*/
 
 /*content content content*/
  body {
   margin: 0;
   font-family: "Baskerville", serif;
-  background-image: linear-gradient(to top, rgb(190, 190, 190), rgb(255, 255, 255)); /*changed*/
+  background-image: linear-gradient(to top, rgb(190, 190, 190), rgb(255, 255, 255)); 
 }
  .image-banner {
             display: flex;
             justify-content: center;
-            gap: 10px; /*changed*/
+            gap: 40px; 
             padding: 20px 0;
-            /* removed the bg color*/
+          
+            margin-top: 100px;
         }
 
         .image-banner img {
-            width: 320px; /*changed*/
-            height: 180px; /*changed*/
+            width: 320px; 
+            height: 180px; 
             object-fit: cover;
             border: 1px solid #ddd;
         }
@@ -211,12 +215,12 @@ footer {
   flex-wrap: wrap;
 }
 
-/*added*/
+
 .logos{
   margin-left: 15px;
 }
 
-/*changed*/
+
 .logos img {
  height: 90px;
   width: 90px;
@@ -224,7 +228,7 @@ footer {
   align-items: center;
 }
 
-/*added*/
+
 .parish-name {
   margin-top: 10px;
   margin-right: 10px;
@@ -254,7 +258,7 @@ footer {
   cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
-  margin-right: 10px; /*changed*/
+  margin-right: 10px; 
   width: 220px; 
 }
 
@@ -304,7 +308,7 @@ footer {
     }
 
     .nav-links ul {
-        flex-direction: row; /*changed*/
+        flex-direction: row; 
         gap: 10px;
     }
 
@@ -327,34 +331,34 @@ footer {
         padding: 0 10px;
     }
 
-  /*added*/
+
      .footer-content {
     flex-direction: column;  
     align-items: center;      
     text-align: center;       
   }
 
-  /*added*/
+
   .footer-content img {
     margin: 5px 0px;        
   }
 
-  /*added*/
+
   .contact { 
     margin-top: 10px;
   }
   
- /*added*/
+
 .parish-name {
   margin-right: 0px;
 }
 
-/*added*/
+
 .logos{
   margin-left: 0px;
 }
 
-  /*added*/  
+  
   #contact-btn {
     margin-right: 0px;
     margin-bottom: 10px;
@@ -374,7 +378,7 @@ footer {
         font-size: 20px;
     }
 
-    /*added*/
+   
     .logo-section img{
     height: 60px;
     width: 60px;
@@ -383,34 +387,34 @@ footer {
     .nav-links ul {
         flex-direction: row; 
         flex-wrap: wrap;     
-        justify-content: center; /*changed*/
+        justify-content: center; 
     }
 
     .nav-links li {
       margin-left: 10px;
-      font-size: 10px; /*changed*/
-      justify-content: space-evenly; /*changed*/
+      font-size: 10px; 
+      justify-content: space-evenly;
     }
 
-  /*added*/
+  
   .footer-content{
-    flex-direction: column; /*changed*/ 
+    flex-direction: column;  
     flex-wrap: wrap;     
-    padding: 10px; /*changed*/
+    padding: 10px; 
     place-items: center;
     }
 
-  /*added*/
+
   .footer-content h3 {
     font-size: 1rem;        
   }
 
-  /*added*/
+
   .footer-content p {
     font-size: 0.8rem;
   }
 
- /*added*/
+ 
   .logos img {
     margin-right: 0px; 
     height: 60px;
@@ -503,7 +507,290 @@ footer {
     width: 300px;             
   }
 }
-    
+
+
+.dark-btn {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-/*queries queries queries*/
+.dark-btn:hover {
+    background-color: #444;
+}
+
+
+
+/* BODY */
+
+body.dark-mode {
+    background: #121212 !important;
+    color: #f5f5f5 !important;
+}
+
+/* FIX GRADIENT BACKGROUND */
+
+body.dark-mode {
+    background-image: none !important;
+}
+
+/* HEADER */
+
+body.dark-mode .site-header {
+    background-color: #1e1e1e !important;
+}
+
+/* HEADER TEXT */
+
+body.dark-mode .logo-section h1 {
+    color: white !important;
+}
+
+/* NAVIGATION */
+
+body.dark-mode .nav-links a,
+body.dark-mode #parish-toggle {
+    color: white !important;
+}
+
+/* PARISH DROPDOWN */
+
+body.dark-mode #parish-nav {
+    background-color: #2a2a2a !important;
+}
+
+body.dark-mode #parish-nav a {
+    color: #ffd369 !important;
+}
+
+body.dark-mode #parish-nav li:hover {
+    background-color: #3a3a3a !important;
+    border-left: #ffd369 solid 2px;
+    border-right: #ffd369 solid 2px;
+}
+
+/* MAIN CONTAINER */
+
+body.dark-mode .main-container {
+    background-color: transparent !important;
+}
+
+/* SECTION TITLES */
+
+body.dark-mode .section-title h2,
+body.dark-mode .section-title p {
+    color: white !important;
+}
+
+/* SERVICES GRID */
+
+body.dark-mode .services-grid {
+    background-color: transparent !important;
+}
+
+/* CARDS */
+
+body.dark-mode .card {
+    background-color: #1f1f1f !important;
+    border: 1px solid #333 !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5) !important;
+}
+
+/* CARD HEADERS */
+
+body.dark-mode .card h3 {
+    background-color: #0d47a1 !important;
+    color: white !important;
+}
+
+/* CARD BODY */
+
+body.dark-mode .card-body {
+    background-color: #1f1f1f !important;
+    color: white !important;
+}
+
+/* ALL TEXT */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode strong {
+    color: white !important;
+}
+
+/* LINKS */
+
+body.dark-mode a {
+    color: #ffd369 !important;
+}
+
+/* IMAGE BANNER */
+
+body.dark-mode .image-banner {
+    background-color: #121212 !important;
+}
+
+/* FOOTER */
+
+body.dark-mode footer {
+    background-color: #1e1e1e !important;
+}
+
+/* FOOTER TEXT */
+
+body.dark-mode .parish-name,
+body.dark-mode .small-text,
+body.dark-mode .rights {
+    color: white !important;
+}
+
+/* CONTACT BUTTON */
+
+body.dark-mode #contact-btn {
+    background-color: #ffd369 !important;
+    color: black !important;
+    border: none !important;
+}
+
+/* CONTACT DROPDOWN */
+
+body.dark-mode #contact-nav {
+    background-color: #2a2a2a !important;
+}
+
+body.dark-mode #contact-nav a {
+    color: #ffd369 !important;
+}
+
+body.dark-mode #contact-nav li:hover {
+    background-color: #3a3a3a !important;
+}
+
+/* HR */
+
+body.dark-mode hr {
+    border-top: 10px solid white !important;
+}
+
+
+/* NAVIGATION LINKS */
+
+.nav-links a:hover,
+#parish-toggle:hover {
+    color: #ffffff;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+/* PARISH DROPDOWN LINKS */
+
+#parish-nav a:hover {
+    background-color: #3F51B5;
+    color: white !important;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* CONTACT DROPDOWN LINKS */
+
+#contact-nav a:hover {
+    background-color: #3F51B5;
+    color: white !important;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: block;
+    padding: 5px;
+}
+
+/* CARD HOVER */
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* IMAGE HOVER */
+
+.image-banner img {
+    transition: 0.4s ease;
+}
+
+.image-banner img:hover {
+    transform: scale(1.03);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* BUTTON HOVER */
+
+#contact-btn:hover,
+.dark-btn:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    opacity: 0.9;
+}
+
+/* LOGO HOVER */
+
+.logo-section img,
+.logos img {
+    transition: 0.4s ease;
+}
+
+.logo-section img:hover,
+.logos img:hover {
+    transform: rotate(5deg) scale(1.08);
+}
+
+/* DARK MODE CARD HOVER */
+
+body.dark-mode .card:hover {
+    box-shadow: 0 8px 20px rgba(255,255,255,0.08);
+}
+
+/* DARK MODE NAVIGATION HOVER */
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode #parish-toggle:hover {
+    color: #ffd369 !important;
+}
+
+/* DARK MODE DROPDOWN HOVER */
+
+body.dark-mode #parish-nav a:hover,
+body.dark-mode #contact-nav a:hover {
+    background-color: #444 !important;
+    color: #ffd369 !important;
+}
+/*Back to top*/
+  #backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #2980b9;
+}
